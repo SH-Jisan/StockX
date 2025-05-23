@@ -1,0 +1,143 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: Roboto, sans-serif;
+    letter-spacing: 1px;
+}
+
+#root{
+    min-height: 100vh;
+}
+
+.main_container{
+    height: 100vh;
+    width: 100vw;
+    background-color: ghostwhite;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+}
+
+.userpic_container{
+    height: 100vh;
+    width: 35%;
+    background-color: red;
+    flex-shrink: 0;
+    text-align: center;
+}
+
+.profile_pic{
+    width: 60%; /* Or 200px, depending on layout */
+    aspect-ratio: 1 / 1;  /* Maintain square shape */
+    object-fit: cover;    /* Crop to fit nicely */
+    border-radius: 50%;   /* Make it a perfect circle */
+    display: block;
+    margin: 20px auto;       /* Center horizontally */
+
+}
+
+.info_container{
+    width: 65%;
+    height: 100vh;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.user_info{
+    width: 100%;
+    min-height: 200px;
+    background-color: blue;
+
+}
+
+.global_box{
+    width: 100%;
+    min-height: 500px;
+    background-color: yellowgreen;
+
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+
+
+}
+
+.info_holder{
+    width: 60%;
+    min-height: 25px;
+    background-color: lightgray;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+.employee_info{
+    width: 100%;
+    background-color: green;
+    text-align: center;
+
+}
+
+
+@media(max-width: 800px){
+    .main_container{
+        flex-direction: column;
+        overflow: auto;
+    }
+
+    .userpic_container{
+        width: 100%;
+        height: auto;
+    }
+
+    .profile_pic{
+        width: 30%;
+    }
+
+    .info_container{
+        width: 100%;
+        height: auto;
+    }
+}
+
+/*.main_container {*/
+/*    display: flex;*/
+/*    height: 100%;*/
+/*    width: 100%;*/
+/*}*/
+
+/*.box1 {*/
+/*    width: 35%;*/
+/*    height: 100vh;*/
+/*    background-color: red;*/
+/*}*/
+
+/*.right_section {*/
+/*    width: 65%;*/
+/*    height: 100vh;*/
+/*    overflow-y: auto;*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*}*/
+
+/*.box2 {*/
+/*    background-color: green;*/
+/*    padding: 20px;*/
+/*    min-height: 500px;*/
+/*}*/
+
+/*.box3 {*/
+/*    background-color: blue;*/
+/*    padding: 20px;*/
+/*    min-height: 1000px;*/
+/*}*/
