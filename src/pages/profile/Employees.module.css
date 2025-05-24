@@ -3,9 +3,10 @@
     width: 20%;
     min-width: 200px;
 
-    border: 1px solid black;
+    border: none;
     border-radius: 8px;
-    box-shadow: 5px 5px 15px rgba(0 ,0 , 0 , 0.3);
+    box-shadow: 2px 5px 15px rgba(0 ,0 , 0 , 0.3);
+
 
 
     display: flex;
@@ -14,6 +15,8 @@
     align-items: center;
 
     margin-right: 15px;
+
+    background-color: #eef2f7;
 
 }
 

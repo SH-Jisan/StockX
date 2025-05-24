@@ -62,9 +62,6 @@ const Profile = () => {
                                 <img src={addemp_ico} alt="Addemp" />
                             </div>
 
-                            <Employees />
-                            <Employees />
-                            <Employees />
 
                             {employeeList.map((_, index)=> (
                                 <Employees key={index}/>
