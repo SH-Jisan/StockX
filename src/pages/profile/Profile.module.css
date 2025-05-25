@@ -3,7 +3,7 @@ html, body {
     padding: 0;
     width: 100%;
     height: 100%;
-    font-family: Roboto, sans-serif;
+    font-family: Arial, sans-serif;
     letter-spacing: 1px;
 }
 
@@ -14,7 +14,7 @@ html, body {
 .main_container{
     height: 100vh;
     width: 100vw;
-    background-color: ghostwhite;
+    background-color: white;
     display: flex;
     flex-direction: row;
     overflow: hidden;
@@ -75,17 +75,26 @@ html, body {
     height: 15%;
     width: auto;
     min-width: 42%;
-    background-color: gainsboro;
+    background-color: #D6D9DE;
 
     border: none;
-    border-radius: 10px;
+    border-left: 8px solid black;
+    border-radius: 7px;
     margin-right: 20px;
 
+    text-align: left;
+
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
+
 }
+
+.info_holder p{
+    margin-left: 10%;
+}
+
 
 .button_container{
     width: 100%;
@@ -130,6 +139,7 @@ html, body {
     outline: 3px dashed grey;
     outline-offset: -2px;
     border-radius: 8px;
+    background-color: #eef2f7;
 
     transition: background-color 0.3s ease, transform 0.3s ease;
 
@@ -155,6 +165,8 @@ html, body {
 .popup_container{
 
 }
+
+
 
 @media(max-width: 615px){
     .main_container{

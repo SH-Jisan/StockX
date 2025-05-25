@@ -47,7 +47,7 @@ const Profile = () => {
                                 <p><strong>Last Name: </strong>{user.lastName}</p>
                             </div>
                             <div className={styles.info_holder}>
-                                <p><strong>Shop Name: </strong>{user.shopName}</p>
+                                <p><strong>Shop Name:</strong>{user.shopName}</p>
                             </div>
                             <div className={styles.info_holder}>
                                 <p><strong>Location: </strong>{user.location}</p>

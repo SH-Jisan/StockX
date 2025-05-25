@@ -1,63 +1,33 @@
-// src/components/Modal.jsx
-import React, { useEffect, useState } from "react";
-import styles from "./Tempo.module.css";
+// src/pages/UserInfo.jsx
+import React from 'react';
+import styles from './Tempo.module.css';
 
-const Tempo = ({ isOpen, onClose, children }) => {
-
-    const [isVisible , setIsVisible] = useState(false);
-    const [isClosing , setIsClosing] = useState(false);
-
-    useEffect(() =>{
-        if(isOpen){
-            setIsVisible(true);
-        }
-    } , [isOpen]);
-
-    useEffect(() => {
-        const handleKeyDown = (e) => {
-            if (e.key === "Escape") {
-                triggerClose();
-            }
-        };
-        if (isOpen) {
-            document.addEventListener("keydown", handleKeyDown);
-        }
-        return () => {
-            document.removeEventListener("keydown", handleKeyDown);
-        };
-    }, [isOpen]);
-
-    const triggerClose = () =>{
-        setIsClosing(true);
-        setTimeout(() => {
-            setIsClosing(false);
-            setIsVisible(false);
-            onClose();
-        } , 300);
-    };
-
-    if(!isVisible) return null;
-
-    const content =
-        typeof children === "function"
-            ? children({requestClose: triggerClose})
-            : children;
-
-    console.log("Rendered content: " , content);
+const Tempo = () => {
     return (
-        <div
-            className={`${styles.overlay} ${isClosing ? styles.fadeOut : ""}`}
-            onClick={triggerClose}>
-            <div
-                className={`${styles.modal} ${isClosing ? styles.zoomOut : ""}`}
-                onClick={(e) => e.stopPropagation()} // prevent close on inner click
-            >
-                <button onClick={triggerClose} className={styles.closeBtn}>X</button>
-                {content}
+        <div className={styles.userInfo}>
+            <h2>User's Information</h2>
+            <div className={styles.infoContainer}>
+                <div className={styles.infoBox}>
+                    <div className={styles.slideText}><strong>First Name:</strong> SH</div>
+                </div>
+                <div className={styles.infoBox}>
+                    <div className={styles.slideText}><strong>Last Name:</strong> Jisan</div>
+                </div>
+                <div className={styles.infoBox}>
+                    <div className={styles.slideText}><strong>Shop Name:</strong> ABC</div>
+                </div>
+                <div className={styles.infoBox}>
+                    <div className={styles.slideText}><strong>Location:</strong> Gopalganj</div>
+                </div>
+                <div className={styles.infoBox}>
+                    <div className={styles.slideText}><strong>Phone:</strong> 01537284797</div>
+                </div>
+                <div className={styles.infoBox}>
+                    <div className={styles.slideText}><strong>Email:</strong> shzisun123@gmail.com</div>
+                </div>
             </div>
         </div>
     );
-
 };
 
 export default Tempo;
