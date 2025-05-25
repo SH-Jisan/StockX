@@ -1,5 +1,6 @@
 // src/components/UserForm.jsx
 import React, { useState } from "react";
+import styles from './Profile.module.css';
 
 const Edit_user = ({ onSave, requestClose , user }) => {
     const [firstName, setFirstName] = useState(user.firstName);
@@ -8,6 +9,7 @@ const Edit_user = ({ onSave, requestClose , user }) => {
     const [location , setLocation] = useState(user.location);
     const [shopName , setShopName] = useState(user.shopName);
     const [profilePic , setProfilePic] = useState(user.profilePic);
+    const [phoneNumber , setPhoneNumber] = useState(user.phoneNumber);
 
     const handleChange = (e) => {
         onSave({firstName , lastName , email, location, shopName , profilePic});
@@ -32,54 +34,77 @@ const Edit_user = ({ onSave, requestClose , user }) => {
 
     return (
         <form onSubmit={handleSubmit}>
-            <input
-                type="text"
-                name="firstName"
-                placeholder="First Name"
-                value={firstName}
-                onChange={(e) => setFirstName(e.target.value)}
-                required
-            /><br />
-
-            <input
-                type="text"
-                name="lastName"
-                placeholder="Last Name"
-                value={lastName}
-                onChange={(e)=>setLastName(e.target.value)}
-                required
-            /><br />
-
-            <input
-                type="email"
-                name="email"
-                placeholder="Email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-            /><br />
-
-            <input
-                type="text"
-                name="location"
-                placeholder="Location"
-                value={location}
-                onChange={(e) => setLocation(e.target.value)}
-                required
-            /><br />
-
-            <input
-                type="text"
-                name="shopName"
-                placeholder="Shop Name"
-                value={shopName}
-                onChange={(e) => setShopName(e.target.value)}
-                required
-            /><br />
-
-            <button type="submit" onClick={handleChange}>Save</button>
+            <div className={styles.editUserPopup_container}>
+                <strong>First Name:</strong>
+                <input
+                    type="text"
+                    name="firstName"
+                    placeholder="First Name"
+                    value={firstName}
+                    onChange={(e) => setFirstName(e.target.value)}
+                    required
+                /><br />
+                <strong>Last Name:</strong>
+                <input
+                    type="text"
+                    name="firstName"
+                    placeholder="First Name"
+                    value={lastName}
+                    onChange={(e) => setLastName(e.target.value)}
+                    required
+                /><br />
+                <strong>Shop Name:</strong>
+                <input
+                    type="text"
+                    name="firstName"
+                    placeholder="First Name"
+                    value={shopName}
+                    onChange={(e) => setShopName(e.target.value)}
+                    required
+                /><br />
+                <strong>Location:</strong>
+                <input
+                    type="text"
+                    name="firstName"
+                    placeholder="First Name"
+                    value={location}
+                    onChange={(e) => setLocation(e.target.value)}
+                    required
+                /><br />
+                <strong>Phone Number:</strong>
+                <input
+                    type="text"
+                    name="firstName"
+                    placeholder="First Name"
+                    value={phoneNumber}
+                    onChange={(e) => setPhoneNumber(e.target.value)}
+                    required
+                /><br />
+                <strong>Email:</strong>
+                <input
+                    type="text"
+                    name="firstName"
+                    placeholder="First Name"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                /><br />
+                <div className={styles.editUserBtn_container}>
+                    <button type="submit" onClick={handleChange}>Save</button>
+                </div>
+            </div>
         </form>
     );
 };
 
 export default Edit_user;
+
+
+// <input
+//     type="text"
+//     name="firstName"
+//     placeholder="First Name"
+//     value={firstName}
+//     onChange={(e) => setFirstName(e.target.value)}
+//     required
+// /><br />

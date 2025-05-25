@@ -7,7 +7,7 @@ import Popup from '../src/pages/profile/Popup_modal.jsx';
 const App = () =>{
     return (
         <>
-            <Popup />
+            //< Profile />
         </>
     );
 }

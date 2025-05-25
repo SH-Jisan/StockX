@@ -14,7 +14,7 @@ const Profile = () => {
         shopName: " abc shop" ,
         email: " shzisun123@gmail.com",
         location: "gopu",
-        phone: "01537284797"
+        phoneNumber: "01537284797"
     });
 
     const [isEditing , setIsEditing] = useState(false);
@@ -53,7 +53,7 @@ const Profile = () => {
                                 <p><strong>Location: </strong>{user.location}</p>
                             </div>
                             <div className={styles.info_holder}>
-                                <p><strong>Phone: </strong>{user.phone}</p>
+                                <p><strong>Phone: </strong>{user.phoneNumber}</p>
                             </div>
                             <div className={styles.info_holder}>
                                 <p><strong>Email: </strong>{user.email}</p>
@@ -79,8 +79,7 @@ const Profile = () => {
                         </div>
                     </div>
                 </div>
-                <div className={styles.popup_container}>
-
+                <div>
                     < Popup_modal isOpen={isEditing} onClose={()=> setIsEditing(false)}>
                         {({requestClose})=>(
                             <>

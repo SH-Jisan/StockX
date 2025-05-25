@@ -1,3 +1,5 @@
+/*basic styling*/
+
 html, body {
     margin: 0;
     padding: 0;
@@ -10,6 +12,7 @@ html, body {
 #root{
     min-height: 100vh;
 }
+/*Main profile edit*/
 
 .main_container{
     height: 100vh;
@@ -162,11 +165,44 @@ html, body {
     height: 80%;
 }
 
-.popup_container{
+
+
+/*Edit User Css*/
+
+.editUserPopup_container{
+    width: 100%;
+    height: 100%;
+    background-color: grey;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
 
 }
 
+.editUserPopup_container input{
+    border-radius: 4px;
+    height: 35px;
+    width: 300px;
 
+    padding-left: 5px;
+}
+
+.editUserBtn_container{
+    background-color: #456b10;
+    color: white;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/*Finish Edit User Css*/
 
 @media(max-width: 615px){
     .main_container{

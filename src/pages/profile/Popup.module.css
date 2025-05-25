@@ -16,13 +16,19 @@
 .modal {
     background: white;
     border-radius: 12px;
-    padding: 20px;
-    min-width: 300px;
+    min-width: 10%;
+    min-height: 10%;
     max-width: 90%;
-    max-height: 80vh;
+    max-height: 90%;
     overflow-y: auto;
     animation: zoomIn 0.3s ease forwards;
     transform-origin: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
 }
 
 .zoomOut{
@@ -35,8 +41,8 @@
 
 .closeBtn {
     position: absolute;
-    top: 10px;
-    right: 15px;
+    top: 1px;
+    right: 1px;
     background: transparent;
     border: none;
     font-size: 24px;
