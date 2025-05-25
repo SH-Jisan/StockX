@@ -4,7 +4,7 @@ import styles from "./Popup.module.css";
 
 const Popup_modal = ({ isOpen, onClose, children }) => {
 
-    const [isVisible , setIsVisible] = useState(true);
+    const [isVisible , setIsVisible] = useState(false);
     const [isClosing , setIsClosing] = useState(false);
 
     useEffect(() =>{
