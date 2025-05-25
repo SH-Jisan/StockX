@@ -151,6 +151,11 @@ html, body {
     width: 80%;
     height: 80%;
 }
+
+.popup_container{
+
+}
+
 @media(max-width: 615px){
     .main_container{
         flex-direction: column;

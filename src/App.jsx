@@ -2,12 +2,12 @@ import React from 'react';
 import Profile from '../src/pages/profile/Profile.jsx';
 import Tempo from '../src/tempo/Tempo.jsx';
 import Charts from '../src/pages/statistics/Charts.jsx';
-import Popup from "../src/tempo/Popup.jsx";
-
+import UserInfo from '../src/tempo/UserInfo.jsx'
 const App = () =>{
     return (
         <>
-            <Popup/>
+            <Profile />
+            <UserInfo />
         </>
     );
 }

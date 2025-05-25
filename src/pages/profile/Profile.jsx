@@ -4,8 +4,22 @@ import pro_pic from '../../assets/images/pro_pic.png'
 import Employees from './Employees.jsx'
 import SH from '../../assets/images/SH.png'
 import addemp_ico from '../../assets/images/add_emp.png'
+import Popup_modal from "./Popup_modal.jsx";
+import Edit_user from './Edit_user.jsx';
 
 const Profile = () => {
+    const [user, setUser] = useState({
+        firstName: " SH",
+        lastName: " Jisan",
+        shopName: " abc shop" ,
+        email: " shzisun123@gmail.com",
+        location: "gopu",
+        phone: "01537284797"
+    });
+
+    const [isEditing , setIsEditing] = useState(false);
+
+    const openPopup = () => setIsEditing(true);
 
     const [employeeList , setEmployeeList] = useState([]);
 
@@ -19,7 +33,7 @@ const Profile = () => {
             <div className = {styles.main_container}>
                 <div className={styles.userpic_container}>
                     <img className={styles.profile_pic} src={SH} alt="Profile" />
-                    <h2>SH Jisan</h2>
+                    <h2>{user.firstName} {user.lastName}</h2>
                 </div>
                 <div className={styles.info_container}>
                     <div className={styles.user_info}>
@@ -27,31 +41,26 @@ const Profile = () => {
                         <div className={styles.global_box}>
 
                             <div className={styles.info_holder}>
-                                <strong>First Name:</strong>
-                                <p>SH</p>
+                                <p><strong>First Name: </strong>{user.firstName}</p>
                             </div>
                             <div className={styles.info_holder}>
-                                <strong>Last Name:</strong>
-                                <p>Jisan</p>
+                                <p><strong>Last Name: </strong>{user.lastName}</p>
                             </div>
                             <div className={styles.info_holder}>
-                                <strong>Shop Name:</strong>
-                                <p>ABC</p>
+                                <p><strong>Shop Name: </strong>{user.shopName}</p>
                             </div>
                             <div className={styles.info_holder}>
-                                <strong>Location:</strong>
-                                <p>Gopalganj</p>
+                                <p><strong>Location: </strong>{user.location}</p>
                             </div>
                             <div className={styles.info_holder}>
-                                <p><strong>Phone: </strong>01537284797</p>
+                                <p><strong>Phone: </strong>{user.phone}</p>
                             </div>
                             <div className={styles.info_holder}>
-                                <strong>Email:</strong>
-                                <p>shzisun123@gmail.com</p>
+                                <p><strong>Email: </strong>{user.email}</p>
                             </div>
                         </div>
                         <div className={styles.button_container}>
-                            <button type="submit">Edit Profile</button>
+                            <button onClick={openPopup}>Edit Profile</button>
                         </div>
                     </div>
                     <div className = {styles.employee_info}>
@@ -69,6 +78,24 @@ const Profile = () => {
                             )}
                         </div>
                     </div>
+                </div>
+                <div className={styles.popup_container}>
+
+                    < Popup_modal isOpen={isEditing} onClose={()=> setIsEditing(false)}>
+                        {({requestClose})=>(
+                            <>
+                                <h2>Edit Info</h2>
+                                <Edit_user
+                                    onSave={(formData) =>{
+                                        setUser(formData);
+                                    }}
+
+                                    requestClose={requestClose}
+                                    user={user}
+                                    />
+                            </>
+                        )}
+                    </Popup_modal>
                 </div>
             </div>
         </>

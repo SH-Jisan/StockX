@@ -1,7 +1,7 @@
 // src/components/UserForm.jsx
 import React, { useState } from "react";
 
-const UserForm = ({ onSave, requestClose , user }) => {
+const Edit_user = ({ onSave, requestClose , user }) => {
     const [firstName, setFirstName] = useState(user.firstName);
     const [lastName, setLastName] = useState(user.lastName);
     const [email, setEmail] = useState(user.email);
@@ -82,4 +82,4 @@ const UserForm = ({ onSave, requestClose , user }) => {
     );
 };
 
-export default UserForm;
+export default Edit_user;
