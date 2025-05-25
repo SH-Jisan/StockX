@@ -86,8 +86,8 @@ const Profile = () => {
                             <>
                                 <h2>Edit Info</h2>
                                 <Edit_user
-                                    onSave={(formData) =>{
-                                        setUser(formData);
+                                    onSave={(user) =>{
+                                        setUser(user);
                                     }}
 
                                     requestClose={requestClose}
