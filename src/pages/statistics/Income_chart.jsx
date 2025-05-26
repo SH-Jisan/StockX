@@ -66,7 +66,6 @@ const Income_chart = () =>{
                         <XAxis dataKey="date" />
                         <YAxis />
                         <Tooltip />
-                        <CartesianGrid />
                         <Area
                             type="monotone"
                             dataKey="income"

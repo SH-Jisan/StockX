@@ -11,6 +11,6 @@ export function generateDailyExpenseData(year, month) {
 
     return Array.from({ length: maxDate }, (_, i) => ({
         date: `${i + 1}`,
-        expense: Math.floor(Math.random() * 1000), // or any logic
+        expense: Math.floor(Math.random() * 500), // or any logic
     }));
 }

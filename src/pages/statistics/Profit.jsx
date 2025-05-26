@@ -81,14 +81,14 @@ const Profit = () =>{
                             type="monotone"
                             dataKey="income"
                             stroke="blue"
-                            fill="rgba(0,123,255,0.3)"
+                            fill="white"
                             strokeWidth={3}
                         />
                         <Area
                             type="monotone"
                             dataKey="expense"
                             stroke="red"
-                            fill="rgba(255, 0, 0, 0.3)"
+                            fill="white"
                             strokeWidth={3}
                         />
                     </AreaChart>

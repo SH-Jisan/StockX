@@ -15,7 +15,6 @@ const Charts = () => {
             <div className={styles.main_container}>
                 < Income_chart  />
                 < Expense_chart  />
-                < Profit />
                 < Profit_2/>
             </div>
         </>

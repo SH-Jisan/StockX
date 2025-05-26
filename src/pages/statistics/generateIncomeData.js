@@ -11,6 +11,6 @@ export function generateDailyIncomeData(year, month) {
 
     return Array.from({ length: maxDate }, (_, i) => ({
         date: `${i + 1}`,
-        income: Math.floor(Math.random() * 1000), // or any logic
+        income: Math.floor(Math.random() * 500), // or any logic
     }));
 }
