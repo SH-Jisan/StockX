@@ -1,6 +1,7 @@
 import React , {useState} from 'react';
 import styles from './Charts.module.css'
 import {Area, AreaChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis} from "recharts";
+import {generateDailyIncomeData} from "./generateIncomeData.js";
 import {generateDailyExpenseData} from "./generateExpenseData.js";
 
 const monthNames = [
@@ -23,20 +24,29 @@ const yearOptions = Array.from({ length: 10 }, (_, i) => currentYear - 5 + i);
 //     { name: '9', value: 60 }
 // ];
 
-const Expense_chart = () =>{
+const Profit = () =>{
 
     const today = new Date();
     const [selectedMonth, setSelectedMonth] = useState(today.getMonth() + 1);
     const [selectedYear, setSelectedYear] = useState(today.getFullYear());
 
-    const expenseData = generateDailyExpenseData(selectedYear, selectedMonth);
+    const incomeData = generateDailyIncomeData(selectedMonth , selectedYear);
+    const expenseData = generateDailyExpenseData(selectedMonth , selectedYear);
 
+    const mergeData = incomeData.map((income) =>{
+        const expense = expenseData.find(e => e.date === income.date);
+        return {
+            date: income.date,
+            income: income.income,
+            expense: expense?.expense || 0,
+            profit: income.income - (expense?.expense || 0)
+        };
+    });
 
     return(
         <>
             <div className={styles.chart_container}>
-                <h2>Expense</h2>
-
+                <h2>Profit</h2>
                 <div className={styles.selector}>
                     <select
                         value={selectedMonth}
@@ -62,11 +72,18 @@ const Expense_chart = () =>{
 
                 </div>
                 <ResponsiveContainer className={styles.chart}>
-                    <AreaChart data={expenseData}>
+                    <AreaChart data={mergeData}  >
                         <XAxis dataKey="date" />
                         <YAxis />
                         <Tooltip />
                         <CartesianGrid />
+                        <Area
+                            type="monotone"
+                            dataKey="income"
+                            stroke="blue"
+                            fill="rgba(0,123,255,0.3)"
+                            strokeWidth={3}
+                        />
                         <Area
                             type="monotone"
                             dataKey="expense"
@@ -81,4 +98,4 @@ const Expense_chart = () =>{
     );
 };
 
-export default Expense_chart;
+export default Profit;

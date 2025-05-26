@@ -5,7 +5,7 @@ html, body {
     height: 100%;
     font-family: Roboto, sans-serif;
     letter-spacing: 1px;
-
+    overflow: auto;
 }
 
 #root{
@@ -17,12 +17,14 @@ html, body {
     width: 100vw;
     background-color: white;
     display: flex;
+    gap: 20px;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
     text-align: center;
-
+    overflow: auto;
     line-height: 8px;
+
 }
 
 strong{
@@ -31,7 +33,7 @@ strong{
 
 .chart_container{
     width: 80%;
-    height: 30%;
+    height: 100%;
 
 
     background-color: #eef2f7;
@@ -62,7 +64,9 @@ strong{
     height: 300px;
 }
 
-
+.chart{
+    min-height: 150px;
+}
 
 
 @media (max-width: 400px){
