@@ -1,11 +1,10 @@
-html, body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    font-family: Reboto, sans-serif;
-    overflow: auto;
+.logo {
+    width: 600px;
+    height: 350px;
+    user-select: none;
+    cursor: pointer;
+    object-fit: contain;
+    z-index: 1500;
 
-    background-color: ghostwhite;
-
+    color: white;
 }
