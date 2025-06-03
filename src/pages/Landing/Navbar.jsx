@@ -1,34 +1,32 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import styles from './Navbar.module.css';
-import logoImage from '../../assets/images/Stock_x_logo.png'; // same logo image
-
+import {motion} from 'framer-motion';
 const navVariants = {
-    hidden: { y: '-100%', opacity: 0 },
-    visible: { y: 0, opacity: 1, transition: { duration: 1, ease: 'easeOut' } },
+    hidden: {y: '-100%' , opacity: 0},
+    visible: {y: 0 , opacity: 1, transition: {duration: 1 , ease: 'easeOut'}},
 };
 
-const Navbar = () => {
-    return (
-        <motion.nav
-            className={styles.navbar}
-            initial="hidden"
-            animate="visible"
-            exit="hidden"
-            variants={navVariants}
-        >
-            {/* Logo positioned in navbar left */}
-            <div className={styles.logo} />
-
-            <ul className={styles.menu}>
-                <li className={styles.menuItem}>Contact</li>
-                <li className={styles.menuItem}>Shop</li>
-                <li className={styles.menuItem}>About</li>
-            </ul>
-
-            <button className={styles.loginBtn}>Login</button>
-        </motion.nav>
+const Navbar = () =>{
+    return(
+        <>
+            <motion.nav className={styles.navbar}
+                        initial = "hidden"
+                        animate = "visible"
+                        exit = "hidden"
+                        variants={navVariants}>
+                <div className={styles.logo}>
+                </div>
+                <ul className={styles.navItems}>
+                    <li><a href="#contact">Contact</a> </li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#about">about</a></li>
+                </ul>
+                <div className={styles.loginBtn}>
+                    <button>Login</button>
+                </div>
+            </motion.nav>
+        </>
     );
-};
+}
 
 export default Navbar;
