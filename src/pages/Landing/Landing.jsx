@@ -6,6 +6,7 @@ import Content from './Content';
 import logoImage from './Stock_x_logo_2.png';
 import Footer from './Footer.jsx'
 import { getLogoAnimation, initialLogoPosition } from './logoAnimation';
+import Brands from './Brands.jsx'
 
 const Landing = () => {
     const [animationComplete, setAnimationComplete] = useState(false);
@@ -37,9 +38,9 @@ const Landing = () => {
                 />
             </div>
             <div className={styles.content_container}>
-            {animationComplete && <Navbar />}
-            {animationComplete && <Content show={animationComplete} />}
-                {animationComplete && <Footer show={animationComplete} />}
+                {animationComplete && <Navbar />}
+                {animationComplete && <Content show={animationComplete} />}
+                {animationComplete && <Brands show={animationComplete} />}
             </div>
         </>
     );

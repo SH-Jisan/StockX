@@ -1,4 +1,4 @@
-// src/components/Charts/AddIncome.jsx
+// src/components/Statistics/AddIncome.jsx
 import React, { useState } from 'react';
 import styles from './Charts.module.css';
 

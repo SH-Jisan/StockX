@@ -16,15 +16,16 @@ const Content = ({ show }) => {
                     <section className={styles.hero}>
                         <motion.h1
                             initial={{ opacity: 0, y: -500 }}
-                            animate={{ opacity: 1, y: 0 }}
+                            animate={{ opacity: 1, y: -50 }}
                             transition={{ duration: 1 }}
                         >
-                            Safe & Trusted Gas Appliances Marketplace
+                            Stock X <br/>
+                            A Safe & Trusted Gas Appliances Marketplace
                         </motion.h1>
 
                         <motion.p
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
+                            initial={{ opacity: 0, y: -50 }}
+                            animate={{ opacity: 1 , y: -50}}
                             transition={{ delay: 0.8 }}
                         >
                             Buy and sell gas cylinders, stoves & accessories — fast, safe, and hassle-free.
@@ -32,8 +33,8 @@ const Content = ({ show }) => {
 
                         <motion.div
                             className={styles.ctaButtons}
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
+                            initial={{ opacity: 0, y:-50 }}
+                            animate={{ opacity: 1, y: -50 }}
                             transition={{ delay: 1.2 }}
                         >
                             <button className={styles.primaryBtn}>Shop Now</button>

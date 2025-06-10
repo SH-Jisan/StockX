@@ -4,7 +4,7 @@ html , body{
 .gradient_box {
     width: 100vw;
     height: 140vh;
-    background-color: white;
+    color: whitesmoke;
     margin-top: 110px;
     display: flex;
     align-items: center;
@@ -12,6 +12,21 @@ html , body{
     justify-content: flex-start;
     position: relative;
     z-index: 0;
+    overflow: hidden;
+}
+.gradient_box::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-image: url("D:/Stock x/StockX-1/Practice/src/pages/Landing/image/cylinder_truck.jpeg"); /* Change this */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    filter: brightness(50%) blur(2px);
+    z-index: -1;
 }
 .content_container {
     height: 100vh;

@@ -7,6 +7,7 @@ import Login from '../src/pages/Login_Register/Login_Register_2/Login.jsx'
 import Register from '../src/pages/Login_Register/Login_Register_2/Register.jsx'
 import Landing from '../src/pages/Landing/Landing.jsx'
 import Navbar from '../src/pages/Landing/Navbar.jsx'
+import Brands from './pages/Landing/Brands.jsx';
 const App = () =>{
     return (
         <>
