@@ -12,7 +12,7 @@ import Brands from './pages/Landing/Brands.jsx';
 const App = () =>{
     return (
         <>
-            <LogReg/>
+            <Landing />
         </>
     );
 }
