@@ -48,49 +48,49 @@ const Login = () => {
 
             <form onSubmit={handleLogin} noValidate>
 
-                    <div className ={styles.main_container}>
-                        <div className = {styles.line}></div>
+                <div className ={styles.main_container}>
+                    <div className = {styles.line}></div>
 
-                        <div className = {styled.logo_container}>
-                            <imt src={logo} alt="Logo" className={styled.logo}/>
-                        </div>
+                    <div className = {styled.logo_container}>
+                        <imt src={logo} alt="Logo" className={styled.logo}/>
+                    </div>
 
-                        <div className = {styles.header_container}>
-                            <p>Login</p>
-                        </div>
+                    <div className = {styles.header_container}>
+                        <p>Login</p>
+                    </div>
 
-                        <div className = {styles.form_container}>
-                            <p>Email</p>
-                            <input type = "email"
-                                   className = {styles.input_box}
-                                   value = {email}
-                                   onChange = {e => setEmail(e.target.value)}
+                    <div className = {styles.form_container}>
+                        <p>Email</p>
+                        <input type = "email"
+                               className = {styles.input_box}
+                               value = {email}
+                               onChange = {e => setEmail(e.target.value)}
+                               required
+                        >
+                        </input>
+                        <p>Password</p>
+
+                        <div className = {styles.password_container}>
+                            <input type = {showPassword ? "text" : "password"}
+                                   value = {password}
+                                   onChange = {e => setPassword(e.target.value)}
                                    required
-                            >
-                            </input>
-                            <p>Password</p>
-
-                            <div className = {styles.password_container}>
-                                <input type = {showPassword ? "text" : "password"}
-                                       value = {password}
-                                       onChange = {e => setPassword(e.target.value)}
-                                       required
-                                />
-                                <button type = "button" onClick={()=> setShowPassword(!showPassword)}>
-                                    {showPassword ? <FaEyeSlash /> : <FaEye />}
-                                </button>
-                            </div>
-                        </div>
-
-                        <div className = {styles.button_container}>
-                            <button type="submit">Submit</button>
-                            <button > Explore The App</button>
-                        </div>
-
-                        <div className = {styles.footer_container}>
-                            <p>Not A Member Yet?Register</p>
+                            />
+                            <button type = "button" onClick={()=> setShowPassword(!showPassword)}>
+                                {showPassword ? <FaEyeSlash /> : <FaEye />}
+                            </button>
                         </div>
                     </div>
+
+                    <div className = {styles.button_container}>
+                        <button type="submit">Submit</button>
+                        <button > Explore The App</button>
+                    </div>
+
+                    <div className = {styles.footer_container}>
+                        <p>Not A Member Yet?Register</p>
+                    </div>
+                </div>
             </form>
             <ToastContainer position= "top-center" />
         </>
